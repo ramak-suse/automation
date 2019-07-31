@@ -16,8 +16,7 @@ if (issue.getFixVersions().isEmpty()) {
 }
 
 // Check that all AffectedVersions are Fixed
-def versions = issue.getAffectedVersions().minus(issue.getFixVersions())
-if (versions.isEmpty()) {
+if (issue.getAffectedVersions().size() <= issue.getFixVersions().size()) {
     log.info("All AffectedVersions are fixed (true)")
     return true
 }

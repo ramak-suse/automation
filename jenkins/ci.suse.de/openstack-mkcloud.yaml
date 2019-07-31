@@ -271,6 +271,11 @@
           default:
           description: Set to 1 to deploy neutron with Distributed Virtual Router
 
+      - string:
+          name: want_l3_ha
+          default:
+          description: Set to 1 to deploy neutron with l3 HA
+
       ################################################
       # storage
 
@@ -356,6 +361,11 @@
           description: Deploy with Ceilomenter
 
       - string:
+          name: want_designate_proposal
+          default:
+          description: Deploy with Designate
+
+      - string:
           name: want_magnum_proposal
           default:
           description: Deploy with Magnum
@@ -370,6 +380,12 @@
           default:
           description: Deploy with Monasca
 
+      - choice:
+          name: want_monasca_tsdb
+          choices:
+            - influxdb
+            - cassandra
+
       - string:
           name: want_barbican_proposal
           default:
@@ -379,11 +395,6 @@
           name: want_sahara_proposal
           default:
           description: set to 1 to deploy sahara
-
-      - string:
-          name: want_murano_proposal
-          default:
-          description: set to 1 to deploy murano
 
       - string:
           name: want_aodh_proposal

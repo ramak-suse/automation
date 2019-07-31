@@ -4,9 +4,9 @@
     crowbar_job: '{name}'
     concurrent: True
     triggers:
-    ardana_env: ''
+    cloud_env: ''
     reserve_env: false
     cleanup: never
-    os_cloud: ''
+    ses_enabled: false
     jobs:
         - '{crowbar_job}'
